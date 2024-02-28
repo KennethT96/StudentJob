@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <style>
+        /* Style CSS pour la mise en page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .section-title {
+            font-size: 32px;
+            color: blue;
+            text-align: center;
+        }
+        .subsection-title {
+            font-size: 24px;
+            color: red;
+        }
+        .subsection-content {
+            margin-left: 20px;
+        }
+        .point {
+            font-weight: bold;
+            color: blue;
+            cursor: pointer; /* Ajout d'un curseur pointer pour indiquer que c'est cliquable */
+        }
+        .experts-container {
+            display: none; /* Caché par défaut */
+            flex-direction: column;
+            align-items: center;
+        }
+        .expert {
+            margin: 20px;
+            text-align: center;
+        }
+        .expert img {
+            border-radius: 50%; /* Créer une image de cercle */
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo de votre entreprise" style="float: left;">
+        <h1>Bienvenue sur notre site</h1>
+    </header>
+    <nav>
+        <a href="#">Conseils et entretiens</a>
+        <a href="#">Formations</a>
+        <a href="#">Entreprise</a>
+        <a href="#">Alumnis</a>
+        <div class="dropdown">
+            <a href="#">Offres emplois</a>
+            <div class="dropdown-content">
+                <a href="#">Alternance</a>
+                <a href="#">Stage</a>
+                <a href="#">Job étudiant</a>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <h2 class="section-title">Conseils et entretiens</h2>
+        <p style="color: red;">Conseillers de carrière</p>
+        <p>Nous mettons à votre disposition des conseillers de carrière afin d'analyser vos capacités pour pouvoir les mettre à profit dans un projet professionnel. Cela vous permettra de savoir quel type de job vous correspond le mieux.</p>
+        <p>Nous avons des conseillers dans différents domaines de sorte à ce que vous puissiez avoir l'embarras du choix.</p>
+        <p class="point" style="color: blue;" onclick="toggleExperts('cybersec-experts')">+ Cybersecurité</p>
+        <div class="experts-container" id="cybersec-experts"> <!-- Conteneur des experts en cybersécurité -->
+            <div class="expert">
+                <img src="expert1.jpg" alt="Expert en cybersécurité">
+                <p><strong>Jean-Pascal Pélissier</strong><br>Expert en cybersécurité depuis 10 ans. Ouvert sa start-up il y a maintenant 3 ans.<br>Email: jeanpascal@example.com<br>Téléphone: 0123456789</p>
+            </div>
+            <div class="expert">
+                <img src="expert2.jpg" alt="Expert en cybersécurité">
+                <p><strong>Maeva Gauthier</strong><br>Docteur en cybersécurité depuis 8 ans.<br>Email: maeva@example.com<br>Téléphone: 9876543210</p>
+            </div>
+        </div>
+        <p class="point" style="color: blue;" onclick="toggleExperts('software-eng-experts')">+ Software Engineering</p>
+        <div class="experts-container" id="software-eng-experts"> <!-- Conteneur des experts en ingénierie logicielle -->
+            <div class="expert">
+                <img src="expert3.jpg" alt="Expert en ingénierie logicielle">
+                <p><strong>John Doe</strong><br>Ingénieur logiciel avec 15 ans d'expérience.<br>Email: john@example.com<br>Téléphone: 0123456789</p>
+            </div>
+            <div class="expert">
+                <img src="expert4.jpg" alt="Expert en ingénierie logicielle">
+                <p><strong>Jane Smith</strong><br>Spécialiste en développement logiciel depuis 12 ans.<br>Email: jane@example.com<br>Téléphone: 9876543210</p>
+            </div>
+        </div>
+        <p class="point" style="color: blue;" onclick="toggleExperts('embedded-systems-experts')">+ Systèmes Embarqués et Autonomes</p>
+        <div class="experts-container" id="embedded-systems-experts"> <!-- Conteneur des experts en systèmes embarqués et autonomes -->
+            <div class="expert">
+                <img src="expert5.jpg" alt="Expert en systèmes embarqués et autonomes">
+                <p><strong>Julie Dupont</strong><br>Ingénieure spécialisée en systèmes embarqués depuis 10 ans.<br>Email: julie@example.com<br>Téléphone: 0123456789</p>
+            </div>
+            <div class="expert">
+                <img src="expert6.jpg" alt="Expert en systèmes embarqués et autonomes">
+                <p><strong>Paul Martin</strong><br>Expert en autonomie et contrôle embarqué.<br>Email: paul@example.com<br>Téléphone: 9876543210</p>
+            </div>
+        </div>
+        <p class="point" style="color: blue;" onclick="toggleExperts('ai-data-experts')">+ Intelligence Artificielle et Data</p>
+        <div class="experts-container" id="ai-data-experts"> <!-- Conteneur des experts en intelligence artificielle et data -->
+            <div class="expert">
+                <img src="expert7.jpg" alt="Expert en intelligence artificielle et data">
+                <p><strong>Emily Johnson</strong><br>Spécialiste en intelligence artificielle depuis 8 ans.<br>Email: emily@example.com<br>Téléphone: 0123456789</p>
+            </div>
+            <div class="expert">
+                <img src="expert8.jpg" alt="Expert en intelligence artificielle et data">
+                <p><strong>Samuel Dubois</strong><br>Expert en analyse de données.<br>Email: samuel@example.com<br>Téléphone: 9876543210</p>
+            </div>
+        </div>
+        <p class="point" style="color: blue;" onclick="toggleExperts('vr-experts')">+ Réalité Virtuelle</p>
+        <div class="experts-container" id="vr-experts"> <!-- Conteneur des experts en réalité virtuelle -->
+            <div class="expert">
+                <img src="expert9.jpg" alt="Expert en réalité virtuelle">
+                <p><strong>Alice Dubois</strong><br>Spécialiste en réalité virtuelle depuis 6 ans.<br>Email: alice@example.com<br>Téléphone: 0123456789</p>
+            </div>
+            <div class="expert">
+                <img src="expert10.jpg" alt="Expert en réalité virtuelle">
+                <p><strong>Thomas Robert</strong><br>Expert en conception d'interfaces VR.<br>Email: thomas@example.com<br>Téléphone: 9876543210</p>
+            </div>
+        </div>
+        <!-- Ajout de la section pour les coachs professionnels -->
+        <br>
+        <h2 class="subsection-title" style="color: red;">Coachs professionnels</h2>
+        <p>Nous mettons également à votre disposition des coachs professionnels afin de vous aider à discerner vos capacités pour pouvoir les mettre en avant notamment lors d'entretien. Cela vous permettra d'être plus à l'aise pendant des entretiens, ainsi que vous rajouter la capacité de pouvoir vous vendre aux entreprises.</p>
+        <div class="expert">
+            <img src="coach.jpg" alt="Coach professionnel">
+            <p><strong>Jean-Pascal Pélissier</strong><br>Expert en coaching professionnel depuis 10 ans.<br>Email: jeanpascal@example.com<br>Téléphone: 0123456789</p>
+        </div>
+    </section>
+
+    <script>
+        // Fonction pour afficher ou masquer les experts en fonction de leur ID
+        function toggleExperts(expertsID) {
+            const expertsContainer = document.getElementById(expertsID);
+            if (expertsContainer.style.display === 'none') {
+                expertsContainer.style.display = 'block'; // Afficher les experts
+            } else {
+                expertsContainer.style.display = 'none'; // Masquer les experts
+            }
+        }
+    </script>
+</body>
+</html>
